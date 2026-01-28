@@ -4,6 +4,7 @@ import traceback
 
 import bpy
 
+from pathlib import Path
 from .environment import addon_directories, user_addon_directory
 from .rpc import NvimRpc
 
@@ -42,6 +43,8 @@ def load_addons(addons_to_load):
 
 def create_link_in_user_addon_directory(directory, link_path):
     if os.path.exists(link_path):
+        if Path(link_path).resolve() == Path(directory).resolve():
+            return
         os.remove(link_path)
 
     if sys.platform == "win32":
