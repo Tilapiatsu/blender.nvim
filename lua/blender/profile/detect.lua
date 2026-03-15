@@ -1,7 +1,6 @@
 return function()
   local execs = {
     ['Blender'] = 'blender',
-    ['Blender dev'] = 'blender-dev',
     ['Blender 4.0'] = 'blender-4.0',
     ['Blender 4.1'] = 'blender-4.1',
     ['Blender 4.2'] = 'blender-4.2',
